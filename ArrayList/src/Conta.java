@@ -4,9 +4,6 @@ public class Conta {
     private double saldo;
     private double chequeEspecial;
 
-
-
-
     public String getTitular() {
         return titular;
     }
@@ -16,7 +13,7 @@ public class Conta {
     }
 
     public double getSaldo() {
-        return saldo+this.getChequeEspecial();
+        return saldo + this.getChequeEspecial();
     }
 
     public void setSaldo(double saldo) {
@@ -31,9 +28,9 @@ public class Conta {
         this.numero = numero;
     }
 
-    public void saque(double valor){
-        if ((this.getSaldo() - valor >=0) && (valor>0)){
-            this.setSaldo(this.getSaldo()-valor);
+    public void saque(double valor) {
+        if ((this.getSaldo() - valor >= 0) && (valor > 0)) {
+            this.setSaldo(this.getSaldo() - valor);
         }
     }
 
@@ -45,42 +42,24 @@ public class Conta {
         this.chequeEspecial = chequeEspecial;
     }
 
-    public String toString(){
-        return this.getNumero()+" "+this.getTitular();
+    
+    public String toString() {
+        return this.getNumero() + " " + this.getTitular();
     }
 
-    public boolean equals(Object o){
-        if (o != null){
-            if (o == this){
+    
+    public boolean equals(Object o) {
+        if (o != null) {
+            if (o == this) {
                 return true;
             }
-            if(o instanceof Conta){
+            if (o instanceof Conta) {
                 Conta c = (Conta) o;
-                if (c.getNumero().equals(this.getNumero())){
+                if (c.getNumero().equals(this.getNumero())) {
                     return true;
                 }
             }
-        }else{
-            return false;
         }
         return false;
     }
-
-    public boolean equals(Object o){
-    if (o != null){
-        if (o == this){
-            return true;
-        }
-        if(o instanceof Conta){
-            Conta c = (Conta) o;
-            if (c.getNumero().equals(this.getNumero())){
-                return true;
-            }
-        }
-    } else {
-        return false;
-    }
-    return false;
-}
-
 }
