@@ -16,27 +16,9 @@ public class Banco {
         this.contas = contas;
     }
 
-    public static void addConta(Conta conta) {
-
+    public void addConta(Conta conta) {
+        this.contas.add(conta);
     }
-    import java.util.ArrayList;
-
-public class Banco {
-
-    private ArrayList<Conta> contas;
-
-    public Banco(){
-        this.contas = new ArrayList<>();
-    }
-
-    public ArrayList<Conta> getContas() {
-        return contas;
-    }
-
-    public void setContas(ArrayList<Conta> contas) {
-        this.contas = contas;
-    }
-
     public Conta buscarContaPorNumero(String numeroConta) throws ContaNaoEncontradaException {
         for (Conta conta : contas) {
             if (conta.getNumero().equals(numeroConta)) {
@@ -54,11 +36,6 @@ public class Banco {
         }
         throw new ContaNaoEncontradaException("Conta não encontrada!.");
     }
-
-    public static void addConta(Conta conta) {
-        
-    }
-}
 
 public class ContaNaoEncontradaException extends Exception {
     public ContaNaoEncontradaException(String mensagem) {
